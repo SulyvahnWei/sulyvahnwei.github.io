@@ -64,9 +64,13 @@
 	        
 				<li><a href="/tags/MySQL/">MySQL</a></li>
 	        
-				<li><a href="/tags/LeetCode">LeetCode</a></li>
+				<li><a href="/tags/DataStructure">DataStructure</a></li>
 	        
-				<li><a href="/tags/Algorithm">Algorithm</a></li>
+				<li><a href="/tags/ComputerNetwork">ComputerNetwork</a></li>
+	        
+				<li><a href="/tags/OperatingSystem">OperatingSystem</a></li>
+	        
+				<li><a href="/tags/LeetCode">LeetCode</a></li>
 	        
 			</ul>
 		</nav>
@@ -134,6 +138,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -154,21 +162,25 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 12.5%"><a href="/">Home</a></li>
+					<li style="width: 10%"><a href="/">Home</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/Essays/">Essays</a></li>
+					<li style="width: 10%"><a href="/tags/Essays/">Essays</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/Java/">Java</a></li>
+					<li style="width: 10%"><a href="/tags/Java/">Java</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/Python/">Python</a></li>
+					<li style="width: 10%"><a href="/tags/Python/">Python</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/Matlab/">Matlab</a></li>
+					<li style="width: 10%"><a href="/tags/Matlab/">Matlab</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/MySQL/">MySQL</a></li>
+					<li style="width: 10%"><a href="/tags/MySQL/">MySQL</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/LeetCode">LeetCode</a></li>
+					<li style="width: 10%"><a href="/tags/DataStructure">DataStructure</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/Algorithm">Algorithm</a></li>
+					<li style="width: 10%"><a href="/tags/ComputerNetwork">ComputerNetwork</a></li>
+		        
+					<li style="width: 10%"><a href="/tags/OperatingSystem">OperatingSystem</a></li>
+		        
+					<li style="width: 10%"><a href="/tags/LeetCode">LeetCode</a></li>
 		        
 				</ul>
 			</nav>
@@ -184,93 +196,6 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-    <article id="post-Some Algorithm Problems" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/15/Some%20Algorithm%20Problems/">Some Algorithm Problems</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/15/Some%20Algorithm%20Problems/" class="archive-article-date">
-  	<time datetime="2020-01-15T07:01:17.400Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、假设一棵带索引的二叉搜索树，root指向其根节点，树中每个节点具有如下形式：（见补图），其中，Lsize域的值为该结点左子树中的结点个数加一；left、right分别指向该节点的左、右子树，且假设data域为int型。试用Java语言写一个递归的findk函数，即搜索这颗带索引的二叉搜索树中第K个小的关键码结点。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> BinaryNode <span class="title">findk</span><span class="params">(<span class="keyword">int</span> k, BinaryNode t)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(k==t.Lsize)</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">  <span class="keyword">if</span>(k&lt;t.Lsize)</span><br><span class="line">    <span class="keyword">return</span> findk(k,t.left);</span><br><span class="line">  <span class="keyword">if</span>(t.right==NULL)</span><br><span class="line">    <span class="keyword">return</span> NULL;</span><br><span class="line">  <span class="keyword">else</span> </span><br><span class="line">    <span class="keyword">return</span> findk(k-t.Lsize,t.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>2、已知（k1、k2、k3……kn）是一个最小堆，试写一个函数将（k1、k2、k3……kn、kn+1）调整为最小堆。设函数头为private static void percUp（Comparable[ ] a，int start），其中start为插入堆的位置。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">percUp</span><span class="params">(Comparable [] a, <span class="keyword">int</span> start)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> j = start, i = j/<span class="number">2</span>;</span><br><span class="line">  Comparable temp = a[j];</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">while</span>(j&gt;<span class="number">1</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span> (a[i] &lt;= temp)</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      a[j] = a[i];</span><br><span class="line">      j = i;</span><br><span class="line">      i = i/<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    a[j] = temp;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>3、已知first为不带表头结点的单链表的表头指针（见补图），链表中存储的都是整型数据，试写出求所有节点的data域平均值的递归函数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> data;</span><br><span class="line">  ListNode data;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">Average</span><span class="params">(ListNode f, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (f.link == NULL)</span><br><span class="line">    <span class="keyword">return</span> f.data;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span>(Average(f.link,n-<span class="number">1</span>)*(n-<span class="number">1</span>)+f.data)/n</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>4、给定一棵二叉搜索树t，其根指针为root，各结点结构为（见补图），left、right分别指向结点的左、右子树，假设data域为int型，试用Java语言写一个程序：给出该二叉搜索树的结点与二叉树搜索树的类说明（仅写出必要的成员变量和成员函数），并写出按由大到小的顺序输出二叉搜索树中所有不小于k的数据（k为一给定int型值）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BinaryNode</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> data;</span><br><span class="line">  BinaryNode left;</span><br><span class="line">  BinaryNode right;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinarySearchTree</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">BinarySearchTree</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    root = <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">BSTFind</span><span class="params">(BinarySearchTree t, <span class="keyword">int</span> k)</span></span>;</span><br><span class="line">  <span class="keyword">private</span> BianryNode root;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">BSTFind</span><span class="params">(BinarySeachTree t,<span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(t) &#123;</span><br><span class="line">    BSTFind(t.right,k);</span><br><span class="line">    <span class="keyword">if</span>(t.data-&gt;k)</span><br><span class="line">      System.out.println(t.data);</span><br><span class="line">      BSTFind(t.left,k);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>5、二叉树T以二叉链表的形式存储，设计算法返回二叉树T的先序序列的最后一个结点的指针（要求不用递归），二叉链表的结点结构为（见补图）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (t!=NULL) &#123;</span><br><span class="line">  p = t;</span><br><span class="line">  t = t-&gt;rightchild;</span><br><span class="line">  <span class="keyword">if</span>(t==NULL)</span><br><span class="line">    t = p-&gt;leftchild;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> t;</span><br></pre></td></tr></table></figure>
-
-<p>6、已知一个有向图的邻接表表示，给出一个算法高效地计算出这个图的逆邻接表（即定点i的边链表是所有进入该顶点的边）。要求算法的时间复杂度是O（n+e），其中n是图的顶点树，e是图的边数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;numVertices; i++) &#123;</span><br><span class="line">  Edge *p = NodeTable[i].adj;</span><br><span class="line">  <span class="keyword">while</span>(p!NULL) &#123;</span><br><span class="line">    Edge *q = <span class="keyword">new</span> Edge(i,p-&gt;weight);</span><br><span class="line">    q-&gt;link = NodeTable[p-&gt;dest];</span><br><span class="line">    NodeTable[p-&gt;dest].reverseAdj = q;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>7、给定一个由英文字母组成的字符串S（假设S用数组实现），编制一个递归函数，测试S是否为回文串（a palindrome），“回文串”是指从左向右读该字符串和从右向左读该字符串完全相同，例如“noon”，“radar”等。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">palindrome</span><span class="params">(<span class="keyword">char</span> s[], <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (start &gt;= end)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>((s[start]==s[end]) &amp;&amp; parlindrome(s,start+<span class="number">1</span>,end-<span class="number">1</span>))</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>8、已知L是带头结点的单链表（表中元素个数大于等于2），P指向某结点（非第一结点），删除P结点的直接前驱语句是：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">LinkNode *tmp, *pre;</span><br><span class="line">temp = L-&gt;link;</span><br><span class="line">pre = L;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (tmp-&gt;link!=<span class="literal">NULL</span> &amp;&amp; tmp-&gt;link!=p) &#123;</span><br><span class="line">  pre = tmp;</span><br><span class="line">  tmp = tmp-&gt;link;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (tmp-&gt;link==<span class="literal">NULL</span>)</span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">  pre-&gt;link = p;</span><br><span class="line">  <span class="keyword">delete</span> tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>9、长度为n的数组a[0…n-1]，编写一个算法在O(n)的时间复杂度内将数组中所有负数放在非负数前面。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Arrange</span><span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i=<span class="number">0</span>, j=n<span class="number">-1</span>, x;</span><br><span class="line">  <span class="keyword">while</span> (i&lt;j) &#123;</span><br><span class="line">    <span class="keyword">while</span> (i&lt;j &amp;&amp; A[i]&gt;<span class="number">0</span>)</span><br><span class="line">      i++;</span><br><span class="line">    <span class="keyword">while</span> (i&lt;j &amp;&amp; A[j]&lt;<span class="number">0</span>)</span><br><span class="line">      j--;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;j) &#123;</span><br><span class="line">      x = A[i];</span><br><span class="line">      A[i++] = A[j];</span><br><span class="line">      A[j--] = x;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/15/Some%20Algorithm%20Problems/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -483,7 +408,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">听医生郑重地警告&lt;br&gt;说SARS一上身&lt;br&gt;体温会跟着上升&lt;br&gt;而呼吸啊&lt;br&gt;会变急&lt;br&gt;&lt;br&gt;我暗暗地笑了&lt;br&gt;不觉得有多可怕&lt;br&gt;只觉得他讲的似乎&lt;br&gt;不是病毒&lt;br&gt;&lt;br&gt;而是你</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">人世间一个普通的灵魂&lt;br&gt;&lt;br&gt;在为实现自己梦想的道路上不懈努力着</div>
   	  	
     	</section>
     
