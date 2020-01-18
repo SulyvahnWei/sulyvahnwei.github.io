@@ -76,8 +76,6 @@
 	        
 				<li><a href="/tags/Probability">Probability</a></li>
 	        
-				<li><a href="/tags/MovieReview">Movie_Review</a></li>
-	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -152,8 +150,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -174,31 +170,29 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 7.6923076923076925%"><a href="/">Home</a></li>
+					<li style="width: 8.333333333333334%"><a href="/">Home</a></li>
 		        
-					<li style="width: 7.6923076923076925%"><a href="/tags/Essay/">Essay</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/Essay/">Essay</a></li>
 		        
-					<li style="width: 7.6923076923076925%"><a href="/tags/Java/">Java</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/Java/">Java</a></li>
 		        
-					<li style="width: 7.6923076923076925%"><a href="/tags/Python/">Python</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/Python/">Python</a></li>
 		        
-					<li style="width: 7.6923076923076925%"><a href="/tags/MySQL/">MySQL</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/MySQL/">MySQL</a></li>
 		        
-					<li style="width: 7.6923076923076925%"><a href="/tags/LeetCode">LeetCode</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/LeetCode">LeetCode</a></li>
 		        
-					<li style="width: 7.6923076923076925%"><a href="/tags/DataStructure">Data_Sturcture</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/DataStructure">Data_Sturcture</a></li>
 		        
-					<li style="width: 7.6923076923076925%"><a href="/tags/ComputerNetwork">Computer_Network</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/ComputerNetwork">Computer_Network</a></li>
 		        
-					<li style="width: 7.6923076923076925%"><a href="/tags/OperatingSystem">Operating_System</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/OperatingSystem">Operating_System</a></li>
 		        
-					<li style="width: 7.6923076923076925%"><a href="/tags/Calculus">Calculus</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/Calculus">Calculus</a></li>
 		        
-					<li style="width: 7.6923076923076925%"><a href="/tags/Linear_Algebra">Linear_Algebra</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/Linear_Algebra">Linear_Algebra</a></li>
 		        
-					<li style="width: 7.6923076923076925%"><a href="/tags/Probability">Probability</a></li>
-		        
-					<li style="width: 7.6923076923076925%"><a href="/tags/MovieReview">Movie_Review</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/Probability">Probability</a></li>
 		        
 				</ul>
 			</nav>
@@ -214,6 +208,90 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-《MySQL必知必会》学习记录1：了解SQL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/18/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%951%EF%BC%9A%E4%BA%86%E8%A7%A3SQL/">《MySQL必知必会》学习记录1：了解SQL</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/18/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%951%EF%BC%9A%E4%BA%86%E8%A7%A3SQL/" class="archive-article-date">
+  	<time datetime="2020-01-18T03:42:01.558Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、数据库（database）：保存有组织的数据的容器（通常是一个文件或一组文件）。</p>
+<p>2、表（table）：某种特定类型数据的结构化清单。</p>
+<p> 【注】：在相同的数据库中不可使用相同表明，在不同数据库之间允许表重名。</p>
+<p>3、模式（schema）：关于数据库和表的布局以及特性的信息。</p>
+<p>4、列（column）：表中的一个字段。</p>
+<p>5、行（row）：表中的一个记录。</p>
+<p> 【注】：记忆方法，一行中包括了一条信息所拥有的所有内容，例如经常说调取犯罪记录，犯罪记录中包括时间、地点、人物、事件等所有信息。</p>
+<p>6、数据类型（datatype）：所容许的数据的类型。</p>
+<p>7、主键（primary key）：一列（或一组列），其值能够唯一区分表中的每个行。</p>
+<p>8、关于主键的一些最好的习惯：</p>
+<ul>
+<li>不更新主键列中的值。例如不更新用户ID。</li>
+<li>不重用主键列的值。即不重复，例如用户ID唯一。</li>
+<li>不在主键列中使用可能会更改的值。例如不用学号而用人名作为主键，但学生更改人名，人名重复，主键失效。</li>
+</ul>
+<p>9、SQL（Structured Query Language）：结构化查询语言。是一种专门用来与数据库通信的语言。</p>
+<p>10、SQL的优点：</p>
+<ul>
+<li>SQL不是某个特定数据库供应商专有的语言。即学了以后可以和所有的数据库打交道。</li>
+<li>SQL简单易学。</li>
+<li>SQL是一种强有力的语言。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/18/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%951%EF%BC%9A%E4%BA%86%E8%A7%A3SQL/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
